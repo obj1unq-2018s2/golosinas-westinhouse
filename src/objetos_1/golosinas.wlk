@@ -4,7 +4,7 @@ object bombon {
 	method precio() { return 5 }
 	method peso() { return peso }
 	method mordisco() { peso = peso * 0.8 - 1 }
-	method gusto() { return "frutilla" }
+	method gusto() = "frutilla" 
 	method libreGluten() { return true }
 }
 
@@ -13,7 +13,7 @@ object alfajor {
 	
 	method precio() = 12
 	method mordisco() { peso = peso * 0.8}
-	method gusto() = { return "chocolate"}
+	method gusto() =  "chocolate"
 	method libreGluten() = false
 }
 
@@ -22,7 +22,7 @@ object caramelo {
 	
 	method precio() = 1
 	method mordisco(){ peso -= 1}
-	method gusto() {return "frutilla"}
+	method gusto() = "frutilla"
 	method libreGluten() = true
 }
 
@@ -31,7 +31,7 @@ object chupetin {
 	
 	method precio() = 2
 	method mordisco(){ if(peso > 2) peso = peso * 0.9}
-	method gusto() { return "naranja"}
+	method gusto() = "naranja"
 	method libreGluten() = true
 }
 
@@ -43,7 +43,7 @@ object oblea {
 		if(peso > 70) peso = peso * 0.5
 		else peso = peso * 0.25
 	}
-	method gusto(){return "vainilla"}
+	method gusto() = "vainilla"
 	method libreGluten() = false
 }
 
@@ -61,7 +61,7 @@ object chocolatin {
 	}
 	method precio() = pesoInicial * 0.5
 	method mordisco(){ pesoActual -= 2 }
-	method gusto(){ return "chocolate"}
+	method gusto() = "chocolate"
 	method libreGluten() = false
 }
 
@@ -70,15 +70,15 @@ object golosinaBaniada {
 	var pesoBanio = 4
 	
 	method baniaA(unaGolosina) { golosinaInterior = unaGolosina }
-	method precio() { golosinaInterior.precio() }
-	method peso() { golosinaInterior.peso() }
+	method precio() { return  golosinaInterior.precio() }
+	method peso() { return golosinaInterior.peso() }
 	method mordisco() {
 		golosinaInterior.mordisco()
 		if (pesoBanio > 0) { pesoBanio -= 2 }
 		// otra forma de hacer la cuenta: pesoBanio = (pesoBanio - 2).max(0) 
 	}	
 	method gusto() { return golosinaInterior.gusto() }
-	method libreGluten() { golosinaInterior.libreGluten()}	
+	method libreGluten() { return golosinaInterior.libreGluten()}	
 }
 
 object tuttifrutti {
