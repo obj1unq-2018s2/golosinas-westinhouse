@@ -1,0 +1,71 @@
+import golosinas.*
+
+describe "test de golosinaBaniada" {
+
+// CASO 1: PASTILLA DE TUTTI FRUTTI BAÑADA
+
+	test "peso inicial" {
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals(5, golosinaBaniada.peso())
+	}
+	
+	test "precio" {
+		tuttifrutti.libreGluten(true)
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals(7, golosinaBaniada.precio())
+	}
+	
+	test "mordiscos" {
+		golosinaBaniada.baniaA(tuttifrutti)
+		golosinaBaniada.mordisco()
+		assert.equals(4, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(3, golosinaBaniada.peso())
+	}
+	
+	test "gusto" {
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals("chocolate", golosinaBaniada.gusto())
+	}
+	
+	test "libre de gluten" {
+		tuttifrutti.libreGluten(true)
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.that(golosinaBaniada.libreGluten())	
+	}
+	
+	
+//CASO 2 CHOCOLATIN BAÑADO
+
+	test "peso inicial chocolatin baniado" {
+		chocolatin.pesoInicial(50)
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals(50, golosinaBaniada.peso())
+	}
+	
+	test "precio chocolatin baniado" {
+		chocolatin.pesoInicial(50)
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals(25, golosinaBaniada.precio())
+	}
+	
+	test "mordiscos a chocolatin baniado" {
+		chocolatin.pesoInicial(50)
+		golosinaBaniada.baniaA(chocolatin)
+		golosinaBaniada.mordisco()
+		assert.equals(48, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(46, golosinaBaniada.peso())
+	}
+	
+	test "gusto chocolatin baniado" {
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals("chocolate", golosinaBaniada.gusto())
+	}
+	
+	test "libre de gluten chocolatin baniado" {
+		golosinaBaniada.baniaA(chocolatin)
+		assert.that(!golosinaBaniada.libreGluten())	
+	}
+
+}

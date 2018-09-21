@@ -1,0 +1,67 @@
+import golosinas.*
+
+describe "Test de tutti frutti"{
+	
+
+	test "peso inicial" {
+		assert.equals(5, tuttifrutti.peso())
+	}
+		
+	test "mordiscos" {
+		tuttifrutti.mordisco()
+		assert.equals(4, tuttifrutti.peso())
+		tuttifrutti.mordisco()
+		assert.equals(3, tuttifrutti.peso())
+	}
+	
+	//CASO 1: ES LIBRE DE GLUTEN
+	
+	test "precio" {
+		tuttifrutti.libreGluten(true)
+		assert.equals(7, tuttifrutti.precio())
+	}
+	
+		test "libre de gluten" {
+		tuttifrutti.libreGluten(true)
+		assert.that(tuttifrutti.libreGluten())	
+	}
+	
+	//CASO 2: NO ES LIBRE DE GLUTEN
+	
+	test "precio cuando no es libre de gluten" {
+		tuttifrutti.libreGluten(false)
+		assert.equals(10, tuttifrutti.precio())
+	}
+	
+		test "no es libre de gluten" {
+		tuttifrutti.libreGluten(false)
+		assert.that(!tuttifrutti.libreGluten())	
+	}
+	
+	
+	//COMPROBACIONES DE LOS CAMBIOS DE GUSTO
+
+	test "luego de dar un mordisco, el gusto cambia a frutilla"{
+		tuttifrutti.mordisco()
+		assert.equals(tuttifrutti.gusto(), "frutilla")
+	}
+	
+	test "Al siguiente mordisco, el gusto es naranja"{
+		tuttifrutti.mordisco()
+		tuttifrutti.mordisco()
+		assert.equals(tuttifrutti.gusto(), "naranja")
+	}
+	
+
+
+    test "cuando ya se dieron todos los mordiscos posibles, el mensaje gusto devuelve una lista vacia"{
+        tuttifrutti.mordisco()
+        tuttifrutti.mordisco()
+        tuttifrutti.mordisco()
+        tuttifrutti.mordisco()
+        tuttifrutti.mordisco()
+        assert.equals(tuttifrutti.gusto(), [])	
+	}
+
+	
+}

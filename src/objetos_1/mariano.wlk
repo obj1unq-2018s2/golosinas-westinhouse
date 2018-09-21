@@ -23,13 +23,13 @@ object mariano {
 	/*Pregunta si hay al menos una golosina que sea libre de gluten.
 	  Si no hay ninguna, el método devolvera false. */
 	  
-		golosinasCompradas.any { golosina => golosina.libreGluten()}
+	 	return	golosinasCompradas.any { golosina => golosina.libreGluten()}
 	}
 	method preciosCuidados(){
 	/*Pregunta si todas las golosinas tienen un precio menor o igual a 10.
 	  Si alguna sale mas cara, el método devolvera false. */
 	  
-		golosinasCompradas.all { golosina => golosina.precio() <= 10}
+		return golosinasCompradas.all { golosina => golosina.precio() <= 10}
 	}
 	method golosinaDeSabor(unSabor){
 	/*

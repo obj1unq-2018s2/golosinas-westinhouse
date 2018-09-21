@@ -1,0 +1,30 @@
+import golosinas.*
+
+describe "test de oblea" {
+
+	test "peso inicial" {
+		assert.equals(250, oblea.peso())
+	}
+	
+	test "precio" {
+		assert.equals(5, oblea.precio())
+	}
+	
+	test "mordiscos" {
+		oblea.mordisco()
+		assert.equals(125, oblea.peso())
+		oblea.mordisco()
+		assert.equals(62.5, oblea.peso())
+		oblea.mordisco()
+		assert.equals(15.625, oblea.peso())
+	}
+	
+	test "gusto" {
+		assert.equals("vainilla", oblea.gusto())
+	}
+	
+	test "libre de gluten" {
+		assert.that(!oblea.libreGluten())	
+	}
+	
+}

@@ -51,15 +51,16 @@ object chocolatin {
 	// hay que acordarse de *dos* cosas, el peso inicial y el peso actual
 	// el precio se calcula a partir del precio inicial
 	// el mordisco afecta al peso actual
-	var pesoInicial
+	var pesoInicio
 	var pesoActual
 	
 	/* al principio, el peso actual coincide con el inicial */
 	method pesoInicial(cuanto) { 
-		pesoInicial = cuanto
+		pesoInicio = cuanto
 		pesoActual = cuanto
 	}
-	method precio() = pesoInicial * 0.5
+	method peso() = pesoActual
+	method precio() = pesoInicio * 0.5
 	method mordisco(){ pesoActual -= 2 }
 	method gusto() = "chocolate"
 	method libreGluten() = false
@@ -84,12 +85,13 @@ object golosinaBaniada {
 object tuttifrutti {
 	// como manejar el cambio de sabor ??
 	var property peso = 5
-	var property esLibreGluten = null
+	var property libreGluten = null
 	var property gustos = ["chocolate", "frutilla", "naranja"]
 	var gusto = gustos.head()
 	
+	
 	method gusto() { return gusto}
-	method precio(){ if(esLibreGluten) return 7 else return 10}
+	method precio(){ if(libreGluten) return 7 else return 10}
 	method mordisco(){
 		peso -= 1
 		if(peso > 0){
