@@ -66,17 +66,13 @@ object mariano {
 	method golosinasFaltantes(golosinasDeseadas){
 	/*
 	 * Este método se encarga de filtrar aquellas golosinas que no fueron compradas
-	 * por Mariano de la lista de golosinasDeseadas. Para ello, primero obtiene de esa lista,
-	 * aquellas golosinas que Mariano compro. Y luego, quita de esa lista estas golosinas,
-	 * quedando solamente las que él no adquirió. Este resultado será el mostrado en pantalla
+	 * por Mariano de la lista de golosinasDeseadas. Para ello, primero obtiene
+	 * aquellas golosinas que Mariano no compro, mediante el parametro "golosinasDeseadas. 
+	 * Y luego, calcula la diferencia con aquellas que compro,
+	 * quedando solamente las que él no adquirió. 
+	 * Este resultado será el mostrado en pantalla.
 	 */
-		//golosinasCompradasPorMariano = golosinasCompradas.filter{ golosina => golosinasDeseadas.contains(golosina)}
-		//golosinasQueMarianoNoCompro = golosinasDeseadas.removeAllSuchThat( {golosinaDeseada => golosinasCompradasPorMariano.contains(golosinaDeseada)})
-		//return golosinasQueMarianoNoCompro
-		
-	//	golosinasCompradas = golosinasCompradas.asSet()
-	//	golosinasParaComparar = golosinasDeseadas
-	//	golosinasParaComparar = golosinasParaComparar.asSet()
+
 		return	golosinasDeseadas.asSet().difference(golosinasCompradas.asSet())
 		
 	}
