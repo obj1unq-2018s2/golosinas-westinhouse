@@ -2,6 +2,7 @@ import golosinas.*
 
 describe "Test de tutti frutti"{
 	
+	var tuttifrutti = new Tuttifrutti()
 
 	test "peso inicial" {
 		assert.equals(5, tuttifrutti.peso())

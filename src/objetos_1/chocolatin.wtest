@@ -1,6 +1,8 @@
 import golosinas.*
 
 describe "test de chocolatin" {
+	
+	var chocolatin = new Chocolatin()
 
 	//CASO 1
 	

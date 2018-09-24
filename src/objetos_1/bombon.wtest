@@ -2,6 +2,9 @@ import golosinas.*
 
 describe "test de bombon" {
 
+	var bombon = new Bombon()
+	
+	
 	test "peso inicial" {
 		assert.equals(15, bombon.peso())
 	}

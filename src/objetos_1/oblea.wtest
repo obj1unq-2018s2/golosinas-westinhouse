@@ -1,6 +1,8 @@
 import golosinas.*
 
 describe "test de oblea" {
+	
+	var oblea = new Oblea()
 
 	test "peso inicial" {
 		assert.equals(250, oblea.peso())

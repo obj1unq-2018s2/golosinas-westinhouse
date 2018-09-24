@@ -1,6 +1,10 @@
 import golosinas.*
 
 describe "test de golosinaBaniada" {
+	
+	var tuttifrutti = new Tuttifrutti()
+	var chocolatin = new Chocolatin()
+	var golosinaBaniada = new GolosinaBaniada()
 
 // CASO 1: PASTILLA DE TUTTI FRUTTI BAÑADA
 

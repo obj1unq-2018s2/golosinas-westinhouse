@@ -1,6 +1,8 @@
 import golosinas.*
 
 describe "test de chupetin" {
+	
+	var chupetin = new Chupetin()
 
 	test "peso inicial" {
 		assert.equals(7, chupetin.peso())

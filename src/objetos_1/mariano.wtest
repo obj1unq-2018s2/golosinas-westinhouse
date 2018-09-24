@@ -2,6 +2,12 @@ import golosinas.*
 import mariano.*
 
 describe "tests de mariano" {
+	
+	var chocolatin = new Chocolatin()
+	var caramelo = new Caramelo()
+	var chupetin = new Chupetin()
+	var bombon = new Bombon()
+	var alfajor = new Alfajor()
 
 	fixture {
 		chocolatin.pesoInicial(100)
@@ -22,11 +28,11 @@ describe "tests de mariano" {
 		/* habilitar las lineas anuladas cuando se complete la definicion 
 		 * de las golosinas
 		 */
-	assert.equals(100, chocolatin.peso())
-	assert.equals(5, caramelo.peso())
+		assert.equals(100, chocolatin.peso())
+		assert.equals(5, caramelo.peso())
 		assert.equals(15, bombon.peso())
 		mariano.probarGolosinas()
-	assert.equals(98, chocolatin.peso())
+		assert.equals(98, chocolatin.peso())
 		assert.equals(4, caramelo.peso())
 		assert.equals(11, bombon.peso())
 	}
@@ -41,18 +47,15 @@ describe "tests de mariano" {
 	}
 	
 	test "precios cuidados"{		
-		mariano.comprar(chupetin)
-		mariano.comprar(caramelo)
-		assert.that(mariano.preciosCuidados())
+		assert.notThat(mariano.preciosCuidados())
 	}
 	
 	test "golosinasFaltantes"{
-
-		assert.equals([chupetin, alfajor], mariano.golosinasFaltantes([alfajor, bombon, chocolatin, chupetin]))
+		assert.equals(#{chupetin, alfajor}, mariano.golosinasFaltantes([alfajor, bombon, chocolatin, chupetin]))
 	}
 	
 	test "gustosFaltantes"{
-		assert.equals(["melon"], mariano.gustosFaltantes(["melón", "chocolate", "frutilla" , "vainilla"]))
+		assert.equals(#{"melón", "vainilla"}, mariano.gustosFaltantes(["melón", "chocolate", "frutilla" , "vainilla"]))
 	}
 	
 	

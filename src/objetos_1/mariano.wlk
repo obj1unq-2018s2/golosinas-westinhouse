@@ -17,7 +17,7 @@ object mariano {
 		return golosinasCompradas
 	}
 	method probarGolosinas() { 	
-		golosinasCompradas.map { golosina => golosina.mordisco() }
+		golosinasCompradas = golosinasCompradas.forEach{ golosina => golosina.mordisco() }
 	}
 	method hayGolosinaSinTACC(){
 	/*Pregunta si hay al menos una golosina que sea libre de gluten.
@@ -58,7 +58,7 @@ object mariano {
 		return golosinasCompradas.map{ golosina => golosina.gusto()}.asSet()		
 	}
 	method golosinaMasCara(){
-		return golosinasCompradas.map{ golosina => golosina.precio()}.max()
+		return golosinasCompradas.sortedBy{ golosina1, golosina2 => golosina1.precio() > golosina2.precio()}.first()
 	}
 	method pesoGolosinas(){
 		return golosinasCompradas.map{ golosina => golosina.peso()}.sum()

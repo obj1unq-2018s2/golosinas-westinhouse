@@ -1,6 +1,8 @@
 import golosinas.*
 
 describe "test de caramelo" {
+	
+	var caramelo = new Caramelo()
 
 	test "peso inicial" {
 		assert.equals(5, caramelo.peso())
